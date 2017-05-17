@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自实现遮罩层</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+    <script src="../js/jquery-3-2-1.min.js"></script>
+    <script>
+    function display() {
+        this.background = $("<div>").css({
+            "z-index": 100000000000,
+            "height": "100%",
+            "width": "100%",
+            "background": "#aaa",
+            "position": "fixed",
+            "top": 0,
+            "opacity":0.3
+        });
+        this.loading = $("<div>").css({
+            "z-index": 100000000000,
+            "height": "100%",
+            "width": "100%",
+            "background-image": "url(../images/crazyCat.gif)",
+            "background-repeat":"no-repeat",
+            "background-position":"50%",
+            "position": "fixed",
+            "top": 0
+        });
+        var show = function() {
+            $("body").append(this.background);
+            $("body").append(this.loading);
+        }
+        var hide=function(){
+        	this.background.remove();
+        	this.loading.remove();
+        }
+        show();
+        var t=setTimeout(function(){
+        	hide();
+        },2000);
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="点我" onClick="display()">
+</body>
+
+</html>

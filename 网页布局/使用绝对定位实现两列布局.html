@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用绝对定位实现两列布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.header{
+			height: 200px;
+			background: red;
+		}
+		.main{
+			background: gray;
+			position: relative;
+		}
+		.sidebar{
+			background: yellow;
+			width: 300px;
+			height: 500px;
+		}
+		.content{
+			background: blue;
+			position: absolute;
+			color: white;
+			left: 320px;
+			top: 0;
+		}
+		.footer{
+			height: 200px;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="main">
+		<div class="sidebar"></div>
+		<div class="content">
+			ul>li
+		</div>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
