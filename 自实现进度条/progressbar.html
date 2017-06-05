@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自实现进度条</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrap {
+        height: 20px;
+        width: 120px;
+    }
+    
+    .rateWrap {
+        height: 16px;
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 2px;
+        position: relative;
+        background: #fff;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .rate {
+        z-index: 200;
+        position: absolute;
+        left: 50px;
+        top: 0;
+    }
+    
+    .progress {
+        height: 16px;
+        width: 50%;
+        background: greenyellow;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="rateWrap">
+            <span class="rate">50%</span>
+            <div class="progress"></div>
+        </div>
+    </div>
+</body>
+
+</html>
