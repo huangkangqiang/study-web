@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js实现tab切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+            padding: 0 5px;
+            float: left;
+        }
+        
+        #tab {
+            clear: both;
+        }
+        
+        .tabLine {
+            border-bottom: 3px solid gray;
+        }
+        
+        #tab div {
+            display: none;
+        }
+    </style>
+    <script>
+        var tabs = ["tab1", "tab2", "tab3"];
+
+        function tabChange(tabId) {
+            for (var i = 0; i < tabs.length; i++) {
+                var ele = document.getElementById(tabs[i]);
+                if (tabId == tabs[i]) {
+                    ele.style.display = "block";
+                } else {
+                    ele.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="tabContainer">
+        <div id="tabNav">
+            <ul>
+                <li onclick="tabChange('tab1')">tab1</li>
+                <li onclick="tabChange('tab2')">tab2</li>
+                <li onclick="tabChange('tab3')">tab3</li>
+            </ul>
+        </div>
+        <div id="tab">
+            <div id="tab1">内容一</div>
+            <div id="tab2">内容二</div>
+            <div id="tab3">内容三</div>
+        </div>
+    </div>
+</body>
+
+</html>
