@@ -67,3 +67,38 @@ function loadXMLDoc()
 上面的AJAX应用程序包含一个div和一个按钮
 
 div部分用于显示来自服务器的信息。当被按钮点击时，它负责调用名为loadXMLDoc()的函数
+
+## XHR创建对象
+
+XMLHttpRequest是AJAX的基础。
+
+### XMLHttpRequest对象
+
+所有现代浏览器都支持XMLHttpRequest对象(IE5和IE6使用ActiveXObject)
+
+XMLHttpRequest用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
+### 创建XMLHttpRequest对象
+
+所有现代浏览器均内建XMLHttpRequest对象。
+
+创建XMLHttpRequest对象的语法：
+
+>variable=new XMLHttpRequest();
+
+老版本的IE浏览器使用ActiveX对象：
+
+>variable=new ActiveXObject("Microsoft.XMLHTTP");
+
+为了应对所有的现代浏览器，包括IE5和IE6，请检查浏览器是否支持XMLHttpRequest对象。如果支持，则创建XMLHttpRequest对象。如果不支持，则创建ActiveXObject：
+
+```js
+var xmlhttp;
+if (window.XMLHttpRequest){
+    // IE7+，Firefox。Chrome，Opera，Safari 浏览器执行代码
+    xmlhttp=new XMLHttpRequest();
+}else{
+    // IE6，IE5 浏览器执行代码
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+```
