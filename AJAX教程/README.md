@@ -18,4 +18,52 @@ AJAX是一种用于创建快速动态网页的技术。
 
 ### AJAX工作原理
 
-![AJAX工作原理](./images/1.PNG)
+![AJAX工作原理](./images/1.PNG
+
+## AJAX实例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+function loadXMLDoc()
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","http://www.runoob.com/try/ajax/ajax_info.txt",true);
+    xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>使用 AJAX 修改该文本内容</h2></div>
+<button type="button" onclick="loadXMLDoc()">修改内容</button>
+
+</body>
+</html>
+```
+
+### AJAX实例解析
+
+上面的AJAX应用程序包含一个div和一个按钮
+
+div部分用于显示来自服务器的信息。当被按钮点击时，它负责调用名为loadXMLDoc()的函数
