@@ -259,3 +259,29 @@ for(i=0;i<x.length;i++){
     txt=txt+x[i].childNodes[0].nodeValue+"<br>";
 }
 document.getElementById("myDiv").innerHTML=txt;
+```
+
+## XHR readyState
+
+### AJAX-onreadystatechange事件
+
+#### onreadystatechange事件
+
+当请求被发送到服务器时，我们需要执行一些基于响应的任务。  
+每当readyState改变时，就会触发onreadystatechange事件。  
+readyState属性存有XMLHttpRequest的状态信息。
+
+下面是XMLHttpRequest对象的三个重要的属性：
+
+![XMLHttpRequest对象的三个重要属性](./images/5.PNG)
+
+在onreadystatechange事件中，我们规定当服务器响应已做好被处理的准备时所执行的任务。  
+当readyState等于4并且状态为200时，表示响应已经就绪：
+
+```js
+xmlhttp.onreadystatechange=function(){
+    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+        document.getElementById("myDiv").innerHTML=responseText;
+    }
+}
+```
