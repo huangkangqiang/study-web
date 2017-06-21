@@ -230,3 +230,32 @@ xmlhttp.send();
 document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 ```
 
+## XHR响应
+
+###　AJAX-服务器响应
+
+#### 服务器响应
+
+如需获得来自服务器的响应，请使用XMLHttpRequest对象的responseText和responseXML属性。
+
+![获得来自服务器的响应](./images/4.PNG)
+
+如果来自服务器的响应并非XML，请使用responseText属性。  
+responseText属性返回字符串形式的响应：
+
+```js
+document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+```
+
+#### responseXML属性
+
+如果来自服务器的响应是XML，而且需要作为XML对象进行解析，请使用responseXML属性：
+
+```js
+xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIST");
+for(i=0;i<x.length;i++){
+    txt=txt+x[i].childNodes[0].nodeValue+"<br>";
+}
+document.getElementById("myDiv").innerHTML=txt;
