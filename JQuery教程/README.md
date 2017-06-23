@@ -1,6 +1,6 @@
 # JQuery教程
 
-![菜鸟教程：JQuery教程](http://www.runoob.com/jquery/jquery-tutorial.html)
+[菜鸟教程：JQuery教程](http://www.runoob.com/jquery/jquery-tutorial.html)
 
 + JQuery是一个JavaScript库。
 + JQuery极大地简化了JavaScript编程。
@@ -40,8 +40,8 @@ JQuery库包含以下功能：
 例子：
 
 + $(this).hide()-隐藏当前元素
-+ $("p").hide()-隐藏所有<p>元素
-+ $("p.test").hide()-隐藏所有class="test"的<p>元素
++ $("p").hide()-隐藏所有<p\>元素
++ $("p.test").hide()-隐藏所有class="test"的<p\>元素
 + $("#test").hide()-隐藏所有id="test"的元素
 
 ### 文档就绪事件
@@ -63,12 +63,72 @@ $(document).ready(function(){
 >提示 ：简洁写法
 
 ```js
-$(fucntion(){
+$(function(){
     // todo
 });
 ```
 
+## JQuery选择器
 
+JQuery选择器允许对HTML元素组或单个元素进行操作。  
+JQuery选择器基于元素的id、类、类型、属性、属性值等查找HTML元素。它基于已经存在的CSS选择器，除此之外，还可以自定义选择器。  
+JQuery选择器都以美元符号$开头。
+
+### 元素选择器
+
+JQuery元素选择器基于元素名选取元素。  
+在页面中选取所有<p\>元素
+
+>$("p")
+
+当用户点击按钮后，所有的<p\>元素都隐藏：
+
+```js
+$(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+```
+
+### \#id 选择器
+
+JQuery #id选择器通过HTML元素的id属性选取指定的元素。  
+页面中元素的id应该是唯一的，所以在页面中选取唯一的元素需要通过#id选择器。  
+
+通过id选取元素：
+
+>$("#test")
+
+当用户点击按钮后，id="test"的元素将被隐藏：
+
+```js
+$(function(){
+    $("button").click(function(){
+        $("#test").hide();
+    });
+});
+```
+
+### \.class 选择器
+
+JQuery类选择器可以通过指定的class查找元素
+
+语法如下：
+
+>$(".test")
+
+当用户点击按钮后，所有class="test"的元素都将被隐藏：
+
+```js
+$(function(){
+    $("button").click(function(){
+        $(".test").hide();
+    });
+});
+```
+
+![JQuery选择器](./images/1.PNG)
 
 
 
