@@ -324,3 +324,100 @@ $("p").toggle();
 可选的speed参数规定隐藏/显示的速度，可以取以下值："slow","fast"或毫秒。  
 可选的callback参数是隐藏或显示完成后所执行的函数名称。
 
+### 淡入淡出
+
+JQuery Fadding方法
+
+通过JQuery可以实现元素的淡入淡出效果。
+
+JQuery拥有下面四种fade方法：
+
++ fadeIn()
++ fadeOut()
++ fadeToggle()
++ fadeTo()
+
+#### JQuery fadeIn()
+
+JQuery fadeIn()用于淡入已隐藏的元素。
+
+语法如下：
+
+>$(selector).fadeIn(speed,callback);
+
+可选的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+可选的callback参数是fading完成后所执行的函数名称。
+
+带有不同参数的fadeIn()：
+
+```js
+$("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+});
+```
+
+#### JQuery fadeOut()
+
+JQuery fadeOut()用于淡出可见元素。
+
+语法如下：
+
+>$(selector).fadeOut(speed,callback);
+
+可选的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+可选的callback参数是fading完成后所执行的函数名称。
+
+带有不同参数的fadeOut()：
+
+```js
+$("button").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+});
+```
+
+#### JQuery fadeToggle()
+
+JQuery fadeToggle()可以在fadeIn()和fadeOut()之间切换。  
+如果元素已淡出，则fadeToggle()会向元素添加淡入效果。  
+如果元素已淡入，则fadeToggle()会向元素添加淡出效果。
+
+语法如下：
+
+>$(selector).fadeToggle(speed,callback);
+
+带有不同参数的fadeToggle()：
+
+```js
+$("button").click(function(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
+});
+```
+
+#### JQuery fadeTo()
+
+JQuery fadeTo()允许渐变为给定的不透明度(值介于0和1之间)。
+
+语法如下：
+
+>$(selector).fadeTo(speed,opacity,callback);
+
+必需的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+fadeTo()必需的opacity参数将淡入淡出效果设置为给定的不透明度(值介于0与1之间)。  
+可选的callback参数是fading完成后所执行的函数名称。
+
+带有不同参数的fadeTo()：
+
+```js
+$("button").click(function(){
+    $("#div1").fadeTo("slow",0.15);
+    $("#div2").fadeTo("slow",0.4);
+    $("#div3").fadeTo("slow",0.7);
+});
+```
+
