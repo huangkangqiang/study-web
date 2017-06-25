@@ -172,12 +172,112 @@ $("p").click(function(){
 
 $(document).ready()允许在文档完全加载完后执行函数。
 
+### click()
 
+click()是当按钮点击事件被触发时会调用的一个函数。  
+该函数在用户点击HTML元素的时候执行。  
 
+当点击事件在某个<p\>元素上触发时，隐藏当前的<p\>元素：  
 
+```js
+$("p").click(function(){
+    $(this).hide();
+});
+```
 
+#### dbclick()
 
+当双击元素时，会发生dbclick事件。  
+dbclick()触发dbclick事件，或规定当发生dbclick事件时运行的函数：  
 
+```js
+$("p").dbclick(function(){
+    $(this).hide();
+});
+```
+
+#### mouseenter()
+
+当鼠标指针穿过元素时，会触发mouseenter事件。  
+mouseenter()触发mouseenter事件，或规定当发生mouseenter事件时运行的函数。
+
+```js
+$("#p1").mouseenter(function(){
+    alert("鼠标移到了元素上");
+});
+```
+
+#### mouseleave()
+
+当鼠标指针离开元素时，会发生mouseleave事件。  
+mouseleave()方法触发mouseleave事件，或规定当发生mouseleave事件时运行的函数：
+
+```js
+$("#p1").mouseleave(function(){
+    alert("鼠标指针离开元素");
+});
+```
+
+#### mousedown()
+
+当鼠标指针移动到元素上方，并按下鼠标按键时，会发生mousedown事件。  
+mousedown()触发mousedown事件，或规定当发生mousedown事件时运行的函数：
+
+```js
+$("#p1").mousedown(function(){
+    alert("鼠标在该元素上按下");
+});
+```
+
+#### mouseup()
+
+当在元素上松开鼠标按钮时，会发生mouseup事件。  
+mouseup()触发mouseup事件，或规定当发生mouseup事件时运行的函数：
+
+```js
+$("#p1").mouseup(function(){
+    alert("鼠标在元素上松开");
+});
+```
+
+#### hover()
+
+hover()用于模拟光标悬停事件。  
+当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter)；当鼠标移出这个元素时，会触发指定的第二个函数(mouseleave)。
+
+```js
+$("#p1").hover(
+    function(){
+        alert("mouseenter");
+    },
+    function(){
+        alert("mouseleave");
+    }
+);
+```
+
+#### focus()
+
+当元素获得焦点时，发生focus事件。  
+当通过鼠标点击选中元素或通过tab键定位到元素时，该元素就会获得焦点。  
+focus()触发focus事件，或规定当发生focus事件时运行的函数：
+
+```js
+$("input").focus(function(){
+    $(this).css("background-color","#FFF");
+});
+```
+
+#### blur()
+
+当元素失去焦点时，发生blur事件。  
+blur()触发blur事件，或规定当发生blur事件时运行函数：
+
+```js
+$("input").blur(function(){
+    $(this).css("background-color","#fff");
+});
+```
 
 
 
