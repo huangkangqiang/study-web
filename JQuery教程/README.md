@@ -279,6 +279,48 @@ $("input").blur(function(){
 });
 ```
 
+## JQuery效果
 
+### 隐藏和显示
 
+#### hide()和show()
+
+可以使用hide()和show()来隐藏或显示HTML元素：
+
+```js
+$("p").hide();
+```
+
+```js
+$("p").show();
+```
+
+语法如下：
+
+>$(selector).hide(speed,callback);
+
+>$(selector).show(speed,callback);
+
+可选的speed参数规定隐藏/显示的速度，可以取以下值："slow","fast"或毫秒。  
+可选的callback参数是隐藏或显示完成后所执行的函数名称。
+
+```js
+$("p").hide(1000);
+```
+
+#### toggle()
+
+可以使用toggle()来切换hide()和show()。  
+显示被隐藏的元素，并隐藏已显示的元素：  
+
+```js
+$("p").toggle();
+```
+
+语法如下：
+
+>$(selector).toggle(speed,callback);
+
+可选的speed参数规定隐藏/显示的速度，可以取以下值："slow","fast"或毫秒。  
+可选的callback参数是隐藏或显示完成后所执行的函数名称。
 
