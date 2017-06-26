@@ -421,3 +421,70 @@ $("button").click(function(){
 });
 ```
 
+### 滑动
+
+通过JQuery，可以在元素上创建滑动效果。
+
+JQuery有以下滑动方法：
+
++ slideDown()
++ slideUp()
++ slideToggle()
+
+#### slideDown()
+
+JQuery slideDown()用于向下滑动元素。
+
+语法如下：
+
+>$(selector).slideDown(speed,callback);
+
+可选的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+可选的callback参数是滑动完成后所执行的函数名称。
+
+例子：
+
+```js
+$("#flip").click(function(){
+    #("#panel").slideDown();
+});
+```
+
+#### slideUp()
+
+JQuery slideUp()用于向上滑动元素。
+
+语法如下：
+
+>$(selector).slideUp(speed,callback);
+
+可选的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+可选的callback参数是滑动完成后所执行的函数名称。
+
+例子：
+
+```js
+$("#flip").click(function(){
+    #("#panel").slideUp();
+});
+```
+
+#### slideToggle()
+
+slideToggle()可以在slideDown()和slideUp()之间切换。  
+如果元素向下滑动，则slideToggle()向上滑动。  
+如果元素向上滑动，则slideToggle()向下滑动。
+
+>$(selector).slideToggle(speed,callback);
+
+可选的speed参数规定效果的时长。它可以取以下值："slow"，"fast"或毫秒。  
+可选的callback参数是滑动完成后所执行的函数名称。
+
+例子：
+
+```js
+$("#flip").click(function(){
+    $("#panel").slideToggle();
+});
+```
+
