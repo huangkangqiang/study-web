@@ -521,3 +521,96 @@ $("#flip").click(function(){
     $("#panel").slideToggle();
 });
 ```
+
+### 动画
+
+jQuery animate()允许创建自定义的动画。
+
+#### animate()方法
+
+语法：
+
+>$(selector).animate({params},speed,callback);
+
+必需的params参数定义形成动画的css属性。
+
+可选的speed参数规定效果的时长。可以取以下值："slow"，"fast"或毫秒。
+
+可选的callback参数是动画完成后执行的函数名称。
+
+把<div\>元素往右边移动250像素：
+
+```js
+$("button").click(function(){
+    $("div").animate({left:'250px'});
+});
+```
+
+#### animate()-操作多个属性
+
+生成动画的过程中可以使用多个属性：
+
+```js
+$("button").click(function(){
+    $("div").animate({
+        left:'250px',
+        opacity:'0.5',
+        height:'150px',
+        width:'150px'
+    });
+});
+```
+
+>几乎可以使用animate()操作所有css属性。需要注意的是：必须使用Camel标记法书写所有属性名，比如，paddingLeft而不是padding-left。
+
+#### animate()-使用相对值
+
+可以定义相对值(该值相对于元素的当前值)。需要在值的前面加上+或-：
+
+```js
+$("button").click(function(){
+    $("div").animate({
+        left:'250px',
+        height:'+=150px',
+        widthL'+=150px'
+    });
+});
+```
+
+#### animate()-使用预定义的值
+
+可以把属性的动画值设置为"show"，"hide"或"toggle"。
+
+```js
+$("button").click(function(){
+    $("div").animate({
+        height:"toggle"
+    });
+});
+```
+
+#### animate()-使用队列功能
+
+jQuery默认提供针对动画的队列功能。
+
+编写多个animate()调用，jQuery会创建包含这些方法调用的"内部"队列。然后逐一运行这些animate调用。
+
+```js
+$("button").click(function(){
+    var div=$("div");
+    div.animate({height:'300px',opacity:'0.4'},"slow");
+    div.animate({width:'300px',opacity:'0.8'},"slow");
+    div.animate({height:'100px',opacity:'0.4'},"slow");
+    div.animate({width:'100px',opacity:'0.8'},"slow");
+});
+```
+
+把<div\>元素往右边移动了100像素，然后增加文本的字号：
+
+```js
+$("button").click(function(){
+    var div=$("div")l
+    div.animate({left:'100px'},"slow");
+    div.animate({fontSize:'3em'}."slow");
+});
+```
