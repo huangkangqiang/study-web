@@ -614,3 +614,27 @@ $("button").click(function(){
     div.animate({fontSize:'3em'}."slow");
 });
 ```
+
+### 停止动画
+
+#### stop()
+
+jQuery stop()用于停止动画或效果，在它们完成之前。
+
+stop()适用于所有的jQuery效果函数，包括滑动、淡入淡出和自定义动画。
+
+语法：
+
+>$(selector).stop(stopAll,goToEnd);
+
+可选的stopAll参数规定是否应该清除动画队列。默认是false，即停止活动的动画，允许任何排入队列的动画向后执行。
+
+可选的goToEnd参数规定是否立即完成当前动画，默认是false。
+
+因此，默认地，stop()会清除在被选元素上指定的当前动画。
+
+```js
+$("#stop").click(function(){
+    $("#panel").stop();
+});
+```
