@@ -638,3 +638,34 @@ $("#stop").click(function(){
     $("#panel").stop();
 });
 ```
+
+### Callback方法
+
+Callback函数在当前动画100%完成之后执行。
+
+#### jQuery动画的问题
+
+许多jQuery函数涉及动画，这些函数会将speed或duration作为可选参数。
+
+>例如：$("p").hide("slow");
+
+speed或duration参数可以设置许多不同的值，比如"slow"，"fast"，"normal"或毫秒。
+
+以下实例在隐藏效果完全实现后回调函数：
+
+```js
+$("button").click(function(){
+    $("p").hide("slow",function(){
+        alert("段落隐藏");
+    });
+});
+```
+
+以下实例没有回调函数，警告框会在隐藏效果完成前弹出：
+
+```js
+$("button").click(function(){
+    $("p").hide("slow");
+    alert("段落隐藏");
+});
+```
