@@ -685,3 +685,58 @@ Chaining允许在一条语句中运行多个jQuery方法(在相同的元素上)�
 ```js
 $("#p1").css("color":"red").slideUp(2000).slideDown(2000);
 ```
+
+## jQuery HTML
+
+### 获取内容和属性
+
+#### jQuery DOM操作
+
+jQuery中非常重要的部分，就是操作DOM的能力。
+
+jQuery提供一系列与DOM相关的方法，这使得访问和操作元素和属性变得很容易。
+
+>DOM = Document Object Model(文档对象模型)
+
+DOM定义访问HTML和XML文档的标准："W3C文档对象模型独立于平台和语言的界面，允许程序和脚本动态访问和更新文档的内容、结构以及样式。"
+
+#### 获得内容-text()、html()以及val()
+
+三个简单实用的用于DOM操作的jQuery方法：
+
++ text()-设置或返回所选元素的文本内容
++ html()-设置或返回所选元素的内容
++ val()-设置或返回表单字段的值
+
+通过jQuery text()和html()方法获得内容：
+
+```js
+$("#btn1").click(function(){
+    alert("Text: "+$("#test").text());
+});
+$("#btn2").click(function(){
+    alert("HTML: "+$("#test").text());
+});
+```
+
+通过jQuery val()获得输入字段的值：
+
+```js
+$("#btn1").click(function(){
+    alert("值为： "+$("#test").val());
+});
+```
+
+#### 获取属性-attr()
+
+jQuery attr()用于获取属性值。
+
+获得链接中href属性的值：
+
+```js
+$("button").click(function(){
+    alert($("#link").attr("href"));
+});
+```
+
+
