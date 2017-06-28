@@ -739,4 +739,94 @@ $("button").click(function(){
 });
 ```
 
+### 设置
 
+#### 设置内容-text()、html()以及val()
+
+通过jQuery的三个方法设置内容：
+
++ text()-设置或返回所选元素的文本内容
++ html()-设置或返回所选元素的内容(包括HTML标记)
++ val()-设置或返回表单字段的值
+
+例子：
+
+```js
+$("#btn1").click(function(){
+    $("#test1").text("Hello World!");
+});
+$("#btn2").click(function(){
+    $("#test2").html("<b>Hello World!</b>");
+});
+$("#btn3").click(function(){
+    $("#test3").val("Hello World!");
+});
+```
+
+#### text()、html()的回调函数
+
+回调函数有两个参数：
+
++ 被选元素列表中当前元素的下标
++ 原始的值
+
+回调函数会以函数新值返回希望使用的字符串。
+
+#### 带有回调函数的text()和html()
+
+```js
+$("#btn1").click(function(){
+    $("#test1").text(function(i,origText){
+        return "旧文本："+origText+"新文本：Hello World! (index:"+i+")";
+    });
+});
+$("#btn2").click(function(){
+    $("#test2").html(function(i,origText){
+        return "旧 html："+origText+"新 html：<b>Hello World!</b> (index:"+i+")";
+    });
+});
+```
+
+#### 设置属性-attr()
+
+jQuery attr()用于设置或改变属性值
+
+改变链接中href属性的值：
+
+```js
+$("button").click(function(){
+    $("#link").attr("href","https://www.baidu.com");
+});
+```
+
+attr()允许同时设置多个属性。
+
+同时设置href和title属性：
+
+```js
+$("button").click(function(){
+    $("#link").attr({
+        "href","https://www.baidu.com",
+        "title","百度"
+    });
+});
+```
+
+#### attr()的回调函数
+
+attr()回调函数有两个参数：
+
++ 被选元素列表中当前元素的下标
++ 原始值
+
+回调函数会以函数新值返回希望使用的字符串。
+
+带有回调函数的attr()：
+
+```js
+$("button").click(function(){
+    $("#link").attr(function(i,origValue){
+        return origValue+"/jQuery";
+    });
+});
+```
