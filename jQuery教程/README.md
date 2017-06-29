@@ -937,3 +937,46 @@ jQuery remove()可以接受一个参数，允许对被删元素进行过滤。
 ```js
 $("p").remove(".italic");
 ```
+
+### CSS类
+
+#### 获取并设置CSS类
+
+jQuery拥有若干进行CSS操作的方法：
+
++ addClass()-向被选元素添加一个或多个类
++ removeClass()-从被选元素删除一个或多个类
++ toggleClass()-对被选元素进行添加/删除类的切换操作
++ css()-设置或返回样式属性
+
+#### addClass()
+
+向元素添加一个或多个class属性：
+
+```js
+$("button").click(function(){
+    $("h1,h2").addClass("blue");
+    $("h3,h4").addClass("blue important");
+});
+```
+
+#### removeClass()
+
+从元素删除一个或多个class属性：
+
+```js
+$("button").click(function(){
+    $("h1").removeClass("blue");
+    $("h3,h4").removeClass("blue important");
+});
+```
+
+#### toggleClass()
+
+对被选元素进行添加/删除类的切换操作：
+
+```js
+$("button").click(function(){
+    $("h1,h2").toggleClass("blue important");
+});
+```
