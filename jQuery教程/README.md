@@ -908,3 +908,32 @@ function afterText(){
 }
 ```
 
+### 删除元素
+
+#### remove()
+
+jQuery remove()删除被选元素及其子元素。
+
+```js
+$("#div1").remove();
+```
+
+#### empty()
+
+jQuery empty()删除被选元素的子元素。
+
+```js
+$("#div1").empty();
+```
+
+#### 过滤被删除的元素
+
+jQuery remove()可以接受一个参数，允许对被删元素进行过滤。
+
+该参数可以是任何jQuery选择器的语法。
+
+删除class="italic"的所有<p\>元素：
+
+```js
+$("p").remove(".italic");
+```
