@@ -830,3 +830,81 @@ $("button").click(function(){
     });
 });
 ```
+
+### 添加元素
+
+通过jQuery，可以很容易地添加新元素/内容。
+
+#### 添加新的HTML内容
+
+添加新内容的四个jQuery方法：
+
++ append()-在被选元素的结尾插入内容。
++ prepend()-在被选元素的开头插入内容。
++ after()-在被选元素之后插入内容。
++ before()-在被选元素之前插入内容。
+
+#### append()
+
+jQuery append()在被选元素的结尾插入内容。
+
+```js
+$("p").append("追加文本");
+```
+
+#### prepend()
+
+jQuery prepend()在被选元素的开头插入内容。
+
+```js
+$("p").prepend("在开头追加文本");
+```
+
+#### 通过append()和prepend()添加若干新元素
+
+在上面例子中，只在被选元素的开头/结尾插入文本/HTML。
+
+append()和prepend()能够通过参数接收无限数量的新元素。可以通过jQuery来生成文本/HTML，或者通过js代码和DOM元素。
+
+可以创建若干元素，这些元素可以通过text/HTML、jQuery或者js/DOM来创建。然后通过append()把这些新元素追加到文本中(对prepend()同样有效)：
+
+```js
+function appendText(){
+    var txt1="<p>文本1</p>";
+    var txt2=$("<p></p>").text("文本2");
+    var txt3=document.creatElement("p");
+    txt3.innerHTML="文本3";
+    $("body").append(txt1,txt2,txt3);
+}
+```
+
+#### after()和before()
+
+jQuery after()在被选元素之后插入内容。
+
+jQuery before()在被选元素之前插入内容。
+
+```js
+$("img").after("在后面添加文本");
+
+$("img").before("在前面添加文本");
+```
+
+#### 通过after()和before()添加若干新元素
+
+在上面例子中，只在被选元素的之后/之前插入文本/HTML。
+
+after()和before()能够通过参数接收无限数量的新元素。可以通过jQuery来生成文本/HTML，或者通过js代码和DOM元素。
+
+可以创建若干元素，这些元素可以通过text/HTML、jQuery或者js/DOM来创建。然后通过after()把这些新元素追加到文本中(对before()同样有效)：
+
+```js
+function afterText(){
+    var txt1="<p>文本1</p>";
+    var txt2=$("<p></p>").text("文本2");
+    var txt3=document.creatElement("p");
+    txt3.innerHTML="文本3";
+    $("body").after(txt1,txt2,txt3);
+}
+```
+
