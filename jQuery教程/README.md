@@ -1023,3 +1023,59 @@ $("p").css({
     "font-size":"200%"
 });
 ```
+
+### 尺寸
+
+#### jQuery尺寸
+
+
+#### width()和height()
+
+width()设置或返回元素的宽度(不包括内边距、边框或外边距)。
+
+height()设置或返回元素的高度(不包括内边距、边框或外边距)。
+
+返回<div\>元素的宽度和高度：
+
+```js
+$("button").click(function(){
+    var txt="";
+    txt+="div的高度是："+$("#div1").width()+"</br>";
+    txt+="div的宽度是："+$("#div1").height()+"</br>";
+    $("#div1").html(txt);
+});
+```
+
+#### innerWidth()和innerHeight()
+
+innerWidth()设置或返回元素的宽度(包括内边距)。
+
+innerHeight()设置或返回元素的高度(包括内边距)。
+
+返回<div\>元素的innerWidth和innerHeight：
+
+```js
+$("button").click(function(){
+    var txt="";
+    txt+="div的宽度，包含内边距是："+$("#div1").innerWidth()+"</br>";
+    txt+="div的高度，包含内边距是："+$("#div1").innerHeight()+"</br>";
+    $("#div1").html(txt);
+});
+```
+
+#### outerWidth()和outerHeight()
+
+outerWidth()设置或返回元素的宽度(包括内边距和边框)。
+
+outerHeight()设置或返回元素的高度(包括内边距和边框)。
+
+返回<div\>元素的outerWidth和outerHeight：
+
+```js
+$("button").click(function(){
+    var txt="";
+    txt+="div的高度，包含内边距和边框是："+$("#div1").outerHeight()+"</br>";
+    txt+="div的宽度，包含内边距和边框是："+$("#div1").outerWidth()+"</br>";
+    $("#div1").html(txt);
+});
+```
