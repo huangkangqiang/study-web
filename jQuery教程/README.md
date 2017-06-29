@@ -980,3 +980,46 @@ $("button").click(function(){
     $("h1,h2").toggleClass("blue important");
 });
 ```
+
+### css()
+
+css()设置或返回被选元素的一个或多个样式属性。
+
+#### 返回css属性
+
+返回指定的css属性，使用如下语法：
+
+>css("propertyname");
+
+返回首个匹配元素的background-color的值：
+
+```js
+$("p").css("background-color");
+```
+
+#### 设置css属性
+
+如需设置指定的css属性，使用如下语法：
+
+>css("propertyname","value");
+
+为所有匹配元素设置background-color属性：
+
+```js
+$("p").css("background-color","yellow");
+```
+
+#### 设置多个css属性
+
+如需设置多个css属性，使用如下语法：
+
+>css({"propertyname":"value","propertyname":"value"...});
+
+为所有匹配元素设置background-color和font-size：
+
+```js
+$("p").css({
+    "background-color":"yellow",
+    "font-size":"200%"
+});
+```
