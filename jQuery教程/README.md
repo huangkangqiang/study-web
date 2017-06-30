@@ -1100,5 +1100,54 @@ $("button").click(function(){
 + 右边的<li\>元素时<b\>的父元素，<ul\>的子元素，同时是<div\>的后代。
 + <b\>元素时右边的<li\>的子元素，同时是<ul\>和<div\>的后代。
 
+### 祖先
+
+### 向上遍历DOM树
+
++ parent()
++ parents()
++ parentsUntil()
+
+#### parent()
+
+parent()返回被选元素的直接父元素。
+
+该方法只会向上一级对DOM数进行遍历。
+
+返回每个<span\>元素的直接父元素：
+
+```js
+$("span").parent();
+```
+
+#### parents()
+
+parents()返回被选元素的所有祖先元素，一路向上直到文档的根元素<html\>。
+
+返回所有<span\>元素的所有祖先：
+
+```js
+$("span").parents();
+```
+
+可以使用可选参数来过滤对祖先元素的搜索。
+
+返回所有<span\>元素的所有祖先，并且是<ul\>元素：
+
+```js
+$("span").parents("ul");
+```
+
+#### parentsUntil()
+
+parentsUntil()返回介于两个给定元素之间的所有祖先元素。
+
+返回介于<span\>与<div\>元素之间的所有祖先元素：
+
+```js
+$("span").parentsUntil("div");
+```
+
+
 
 
