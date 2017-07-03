@@ -1298,4 +1298,21 @@ not()与filter()相反。
 $("p").not(".url");
 ```
 
+## jQuery AJAX
+
+### 简介
+
+AJAX是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。
+
+#### 什么是AJAX？
+
+AJAX=异步JavaScript和XML(Asynchronous JavaScript and XML)。这种移动被称为对DOM进行遍历。
+
+简单说来，在不重载整个网页的情况下，AJAX通过后台加载数据，并在网页上显示。
+
+#### 关于jQuery与AJAX
+
+通过jQuery AJAX方法，能够使用HTTP GET和HTTP POST从远程服务器上请求文本、HTML、XML或JSON-同时能够把这些外部数据直接载入网页的被选元素中。
+
+
 
