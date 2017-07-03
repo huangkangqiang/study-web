@@ -1365,3 +1365,72 @@ $("button").click(function(){
         }
     });
 });
+```
+
+### get()/post()
+
+#### HTTP请求：GET vs POST
+
+两种在客户端和服务器进行请求-响应的常用方法：
+
++ GET-从指定的资源请求数据
++ POST-向指定的资源提交要处理的数据
+
+GET基本上用于从服务器上获取数据。
+
+>GET方法可能返回缓存数据
+
+POST也可用于从服务器获取数据。不过，POST不会缓存数据，并且常用于连同请求一起发送数据。
+
+#### $.get()
+
+$.get()通过HTTP GET请求从服务器上请求数据。
+
+语法如下：
+
+>$.get(url,callback);
+
+必需的url参数规定希望请求的url。
+
+可选的callback参数是请求成功后所执行的函数名。
+
+使用$.get()从服务器上的一个文件中取回数据：
+
+```js
+$("button").click(function(){
+    $.get("/test/get",function(data,status){
+        alert("数据："+data+"\n状态："+status);
+    });
+});
+```
+
+$.get()的第一个参数是希望请求的url。
+
+第二个参数是回调函数。第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。
+
+#### $.post()
+
+$.post()通过HTTP POST请求从服务器上请求数据。
+
+语法如下：
+
+>$.post(url,datat,callback);
+
+必需的url参数规定希望请求的url。
+
+可选的data参数规定连同请求发送的数据。
+
+可选的callback参数是请求成功后所执行的函数名。
+
+使用$.post()连同请求一起发送数据：
+
+```js
+$("button").click(function(){
+    $.post("/test/post",{
+        name:"zhangsan"
+    },function(data,status){
+        alert("数据："+data+"n状态："+status);
+    });
+});
+```
+
