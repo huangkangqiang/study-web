@@ -1434,3 +1434,45 @@ $("button").click(function(){
 });
 ```
 
+## jQuery 其他
+
+### noConflict()
+
+jQuery使用$符号作为jQuery的简写。
+
+但是如果其他js框架也使用$符号作为简写怎么办？
+
+noConflict()会释放对$标识符的控制，这样其他脚本就可以使用。
+
+当然，仍然可以通过全名代替简写的方式来使用jQuery：
+
+```js
+$.noConflict();
+jQuery(document).ready(function()){
+    ....
+});
+```
+
+也可以创建自己的简写。noConflict()可返回对jQuery的应用，可以把它存入变量，供稍后使用：
+
+```js
+var jq=$.noConflict();
+jq(document).ready(function(){
+   .... 
+});
+```
+
+如果坚持使用$简写，那么可以把$符号作为变量传递给ready方法。这样就可以在函数内使用$符号，而在函数外，依旧要使用jQuery：
+
+```js
+$.noConflict();
+jQuery(document).ready(function($){
+    $("button").click(function(){
+        ...
+    });
+});)
+```
+
+
+
+
