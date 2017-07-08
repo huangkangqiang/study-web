@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--在IE运行最新的渲染模式-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--初始化移动浏览显示-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>标签页</title>
+    <!--加载Bootstrap样式文件-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <!--nav tabs-->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation">
+                <a href="#firstTab" aria-controls role="tab" data-toggle="tab">第一项</a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="#secondTab" aria-controls role="tab" data-toggle="tab">第二项</a>
+            </li>
+            <li role="presentation">
+                <a href="#thirdTab" aria-controls role="tab" data-toggle="tab">第三项</a>
+            </li>
+            <li role="presentation">
+                <a href="#fouthTab" aria-controls role="tab" data-toggle="tab">第四项</a>
+            </li>
+        </ul>
+        <!--tab panes-->
+        <div class="tab-content">
+            <div class="tab-pane fade" role="tabpanel" id="firstTab">第一项内容</div>
+
+            <div class="tab-pane fade in active" role="tabpanel" id="secondTab">第二项内容</div>
+
+            <div class="tab-pane fade" role="tabpanel" id="thirdTab">第三项内容</div>
+
+            <div class="tab-pane fade" role="tabpanel" id="fouthTab">第四项内容</div>
+        </div>
+    </div>
+</body>
+<!--因为Bootstrap依赖jQuery，所以jQuery的js文件必须先于Bootstrap的js文件加载-->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
