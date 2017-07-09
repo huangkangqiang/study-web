@@ -7,7 +7,7 @@ body {
 .sidebar {
     position: fixed;
     top: 52px;
-    bottom: 0;
+    bottom: 52px;
     left: 0;
     z-index: 1000;
     display: block;
@@ -26,4 +26,19 @@ body {
 
 .nav-sidebar>li>a {
     padding: 10px 20px;
+}
+
+footer {
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+}
+
+footer>a {
+    color: #fff;
+    padding: 0 15px;
+}
+
+footer>a:hover {
+    text-decoration-line: none;
 }
