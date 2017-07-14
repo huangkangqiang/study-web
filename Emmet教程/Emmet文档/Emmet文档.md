@@ -158,3 +158,102 @@ Emmet使用过类似于CSS选择器的语法来描述元素的结构与属性。
 </footer>
 ```
 
+#### 属性操作符
+
+##### ID和CLASS
+
+Emmet使用类似于CSS选择器的语法给元素添加属性：
+
+>div#header+div.page+div#footer.class1.class2.class3
+
+```html
+<div id="header"></div>
+<div class="page"></div>
+<div id="footer" class="class1 class2 class3"></div>
+```
+
+#### 自定义属性
+
+>td[title="Hello world!" colspan=3]
+
+```html
+<td title="Hello world!" colspan="3"></td>
+```
+
++ 方括号内属性数量不限
++ 没有指定值的属性将生成占位（需要编辑器支持）
++ 属性值使用单引号或双引号
++ 属性值如果不包含空格可以省略引号
+
+#### $ 编号
+
+*操作符可以生成重复元素，而$可以对元素编号。将$放在元素名、属性名或属性值中：
+
+>ul>li.item$*5
+
+```html
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+</ul>
+```
+
+多个连写的$可以生成带有前导零的编号：
+
+>ul>li.item$$$*5
+
+```html
+<ul>
+    <li class="item001"></li>
+    <li class="item002"></li>
+    <li class="item003"></li>
+    <li class="item004"></li>
+    <li class="item005"></li>
+</ul>
+```
+
+使用@修饰符，可以改变编号的方向（升序或降序）及起点。
+
+例如改变方向，将@-放在$后：
+
+>ul>li.item$@-*5
+
+```html
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
+```
+
+改变起点，将@N放在$后：
+
+>ul>li.item$@3*5
+
+```html
+<ul>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+    <li class="item6"></li>
+    <li class="item7"></li>
+</ul>
+```
+
+混合使用几种修饰符
+
+>ul>li.item$@-3*5
+
+```html
+<ul>
+    <li class="item7"></li>
+    <li class="item6"></li>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+</ul>
+```
