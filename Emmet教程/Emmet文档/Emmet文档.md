@@ -257,3 +257,24 @@ Emmet使用类似于CSS选择器的语法给元素添加属性：
     <li class="item3"></li>
 </ul>
 ```
+
+#### Text:{}文本
+
+使用大括号为元素添加文本：
+
+>a{Click me}
+
+```html
+<a href="">Click me</a>
+```
+
+注意：{text}类似于独立元素，比如（div，p），不过当它紧跟在元素后面时有特别的意义。比如a{click}与a>{click}结果一样，而a{click}+b{here}与a>{click}+b{here}结果不一样：
+
+```html
+<!-- a{click}+b{here} -->
+<a href="">click</a><b>here</b>
+
+<!-- a>{click}+b{here} -->
+<a href="">click<b>here</b></a>
+```
+
