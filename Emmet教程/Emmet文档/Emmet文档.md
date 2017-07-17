@@ -278,3 +278,41 @@ Emmet使用类似于CSS选择器的语法给元素添加属性：
 <a href="">click<b>here</b></a>
 ```
 
+## 元素类型
+
+当编辑HTML/XML文档时，缩写展开为HTML/XML标签。不过一些元素，比如a和img，缩写展开后带属性：<a href=""\></a\>或<img src="" alt="" /\>。
+
+Emmet如何知道何时添加这些属性？
+
+Emmet所有有元素的定义都在放在snippets.json文件里，格式如下：
+
+```json
+{
+    "html": {
+        "abbreviations": {
+            "a": "<a href=\"\">",
+            "link": "<link rel=\"stylesheet\" href=\"\" />"
+            ...
+        },
+        "snippets": {
+            "cc:ie6": "<!--[if lte IE 6]>\n\t${child}|\n<![endif]-->"
+            ...
+        }
+    },
+
+    "css": {
+        ...
+    }
+}
+```
+
+第一级是元素所属语法名，其中元素定义分成两部分：代码片段与缩写。
+
+### Snippets代码片段
+
+代码片段，同其它程序编辑器一样，是文本代码块，所见即所得，没有转化操作。
+
+### Abbreviation缩写
+
+缩写是带有数据提示的代码块。既然Emmet主要用于编辑HTML/XML，于是缩写的定义使用XML格式来描述元素。
+
