@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>导航栏--侧边栏--ui.router</title>
+    <!--加载样式文件-->
+    <link rel="stylesheet" href="./theme/default/css/app.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <script src="http:////cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.2.4/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.js"></script>
+    <script src="./lib/app.js"></script>
+</head>
+
+<body ng-app="app">
+
+    <!--顶部导航栏-->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-brand" ui-sref="home">导航栏--侧边栏--ui.router</div>
+        <ul class="nav navbar-nav">
+            <li>
+                <a ui-sref="home">主页</a>
+            </li>
+            <li>
+                <a ui-sref="products">产品</a>
+            </li>
+        </ul>
+    </div>
+    <!--/顶部导航栏-->
+
+    <!--中间内容区-->
+    
+        <div class="content" ui-view></div>
+    
+    <!--/中间内容区-->
+
+    <!--页脚-->
+    <div class="footer">
+        <a href="#">
+            <span>帮助</span>
+        </a>
+        <span>|</span>
+        <a href="#">
+            <span>意见</span>
+        </a>
+    </div>
+    <!--/页脚-->
+
+</body>
+
+</html>

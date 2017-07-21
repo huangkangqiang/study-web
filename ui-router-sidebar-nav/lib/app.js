@@ -1,0 +1,30 @@
+var app=angular.module("app",["ui.router"]);//加载依赖模块
+// 配置路由
+app.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
+    $urlRouterProvider.otherwise('/');//url跟配置的不匹配的时候，设置url为"/"
+    $stateProvider
+        .state('home',{
+            url:'/',
+            templateUrl:"./views/home.html"
+        })
+        .state('home.list',{
+            url:'/list',
+            templateUrl:'./views/home.list.html'
+        })
+        .state('home.paragraph',{
+            url:'/paragraph',
+            templateUrl:'./views/home.paragraph.html'
+        })
+        .state('products',{
+            url:'/products',
+            templateUrl:'./views/products.html'
+        })
+        .state('products.intro',{
+            url:'/products/intro',
+            templateUrl:'./views/products.intro.html'
+        })
+        .state('products.list',{
+            url:'/products/list',
+            templateUrl:'./views/products.list.html'
+        });
+}]);

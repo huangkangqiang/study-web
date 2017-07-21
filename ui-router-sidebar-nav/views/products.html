@@ -1,0 +1,41 @@
+<div id="page-wrapper" class="show-sidebar">
+    <div id="page-viewport">
+        <div id="sidebar">
+            <!--侧边栏顶部-->
+            <div id="sidebar-header">
+                <a href="" class="toggle-sidebar">
+                    <h3>侧边栏</h3>
+                </a>
+                <!--侧边栏展开/收缩按钮-->
+                <span class="pull-right">
+                    <a href="" class="toggle-sidebar btn btn-default">=
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </span>
+            </div>
+            <!--侧边栏菜单项-->
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a ui-sref="products.intro">简介
+                        <span class="pull-right">
+                            <i class="fa fa-info"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="products.list">产品列表
+                        <span class="pull-right">
+                            <i class="fa fa-list"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--内容显示区-->
+        <div id="sidebar-page-content" ui-view>
+                <h2>点击侧边栏，切换不同内容</h2>
+        </div>
+    </div>
+</div>
+
+<script src="./lib/sidebar.js"></script>
